@@ -1,12 +1,7 @@
-/* =============================================
-   ATELIÊ BURITIS — style.css
-   Estilo: artesanal/aconchegante, tons bege
-   ============================================= */
- 
-/* --- Fontes (Google Fonts) --- */
+/* --- Fontes (Google Fonts): --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
  
-/* --- Variáveis --- */
+/* --- Variáveis: --- */
 :root {
     --cor-fundo:        #F5F0E8;
     --cor-fundo-alt:    #EDE6D6;
@@ -27,8 +22,9 @@
 }
  
 /* =============================================
-   RESET & BASE
+   RESET & BASE:
    ============================================= */
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -40,7 +36,7 @@ html {
 }
  
 body {
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-fundo); 
     color: var(--cor-texto);
     font-family: var(--fonte-corpo);
     font-size: 1rem;
@@ -64,16 +60,36 @@ h1, h2, h3 {
     color: var(--cor-texto);
 }
  
-h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600; }
-h2 { font-size: clamp(1.5rem, 3vw, 2rem);  font-weight: 600; margin-bottom: 1.25rem; }
-h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+h1 { 
+    font-size: clamp(2rem, 5vw, 3.2rem); 
+    font-weight: 600; 
+}
+
+h2 { 
+    font-size: clamp(1.5rem, 3vw, 2rem);  
+    font-weight: 600; 
+    margin-bottom: 0.75rem; 
+}
+
+h3 { 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    margin-bottom: 0.5rem; 
+}
  
-p { margin-bottom: 1rem; color: var(--cor-texto-suave); }
-p:last-child { margin-bottom: 0; }
+p { 
+    margin-bottom: 1rem; 
+    color: var(--cor-texto-suave); 
+}
+
+p:last-child { 
+    margin-bottom: 0; 
+}
  
 /* =============================================
-   BOTÃO WHATSAPP FIXO
+   BOTÃO WHATSAPP FIXO:
    ============================================= */
+
 .whatsapp-float {
     position: fixed;
     bottom: 1.5rem;
@@ -104,8 +120,9 @@ p:last-child { margin-bottom: 0; }
 }
  
 /* =============================================
-   NAV
+   NAV:
    ============================================= */
+
 nav {
     position: fixed;
     top: 0;
@@ -126,8 +143,7 @@ nav span {
     font-family: var(--fonte-titulo);
     font-size: 1.1rem;
     font-style: italic;
-    /*color: #D4AF37;*/
-    color: rgb(250, 230, 100); 
+    color: #D4AF37;
     margin-right: auto;
 }
  
@@ -141,7 +157,7 @@ nav a {
 }
  
 nav a:hover {
-    color: rgba(250, 230, 100, 0.85);
+    color: #D4AF37;
     transform: scale(1.03);
 }
 
@@ -150,20 +166,20 @@ nav a:active {
 }
  
 /* =============================================
-   HEADER / HERO
+   HEADER / HERO:
    ============================================= */
+
 header {
-    min-height: 100vh;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 8rem 2rem 4rem;
-    background-color: var(--cor-fundo);
+    padding: 6rem 2rem 1rem 3rem;
     background-image:
         radial-gradient(ellipse at 20% 50%, rgba(139, 111, 71, 0.25) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 20%, rgba(139, 111, 71, 0.15) 0%, transparent 50%);
+        radial-gradient(ellipse at 80% 20%, rgba(139, 111, 71, 0.15) 0%, transparent 50%); 
     position: relative;
     overflow: hidden;
 }
@@ -174,6 +190,7 @@ header::before {
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238B6F47' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     opacity: 0.4;
+    pointer-events: none;
 }
  
 header h1 {
@@ -189,41 +206,64 @@ header img {
     max-width: 800px;
     margin: 0 auto;
     border-radius: 70%;
-    border: 3px solid var(--cor-fundo-escuro);
+    border: 1.5px solid #D4AF37;
     background-color: var(--cor-fundo-escuro);
+}
+
+.header-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #25D366;
+    color: #fff;
+    font-family: var(--fonte-corpo);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin: 60px auto 20px auto
+}
+
+.header-whatsapp:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+}
+
+.header-whatsapp img {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    border: none;
+    background: none;
+    pointer-events: none;
 }
  
 /* =============================================
-   SEÇÕES GERAIS
+   SEÇÕES GERAIS:
    ============================================= */
+
 section {
     padding: 5rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: none;
 }
  
 section:nth-child(even) {
     background-color: #FFF9EE;
 }
  
-.secao-intro {
-    max-width: 680px;
-}
- 
 /* =============================================
-   SOBRE NÓS
+   SOBRE NÓS:
    ============================================= */
+
 #sobre {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 2rem;
     max-width: 860px;
     margin: 0 auto;
-    padding-top: none;
+    padding-top: 20px;
 }
  
 #sobre p {
@@ -237,14 +277,17 @@ section:nth-child(even) {
     border: none;
     border-radius: var(--raio-lg);
     box-shadow: var(--sombra);
+    background-color: #2C2416;
 }
  
 /* =============================================
-   SERVIÇOS
+   SERVIÇOS:
    ============================================= */
+
 #servicos {
     max-width: 1100px;
     margin: 0 auto;
+    border-radius: 25px 25px 0px 0px;
 }
  
 .servicos-box {
@@ -328,69 +371,133 @@ section:nth-child(even) {
 }
  
 /* =============================================
-   LOCALIZAÇÃO + HORÁRIOS
+   LOCALIZAÇÃO + HORÁRIOS + CONTATOS + REDES:
    ============================================= */
-.localizacao-topo {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-    margin-bottom: 2rem;
+
+#localizacao {
+    background-color: var(--cor-fundo-alt);
+    padding: 5rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    border-radius: 0px 0px 25px 25px;
+
 }
 
-.info-lateral {
+.localizacao-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 62fr 38fr;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+ 
+/* ----- COLUNA ESQUERDA: LOCALIZAÇÃO + REDES: ----- */
+ 
+.coluna-esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.mapa p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+ 
+.mapa iframe {
+    width: 100%;
+    height: 340px;
+    border: none;
+    border-radius: var(--raio-lg);
+    box-shadow: var(--sombra);
+    display: block;
+}
+
+.redes-sociais {
     flex: 1;
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-lg);
+    padding: 1.5rem;
+    box-shadow: var(--sombra);
+}
+
+.redes-sociais h2 {
+    margin-bottom: 1rem;
+}
+
+.redes-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.rede-item {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    padding: 0.65rem 1rem;
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+.rede-item:hover {
+    background-color: transparent;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 2px 10px rgba(139, 111, 71, 0.12);
+    transform: scale(1.02);
+}
+ 
+.rede-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+.rede-item p {
+    margin: 0;
+    color: var(--cor-texto);
+    font-size: 0.88rem;
+    transition: transform 0.2s;
+}
+
+.rede-item p:active {
+    color: var(--cor-primaria);
+}
+
+/* ----- COLUNA DIREITA: HORÁRIOS + CONTATOS: ----- */
+ 
+.coluna-direita {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-#localizacao {
-    background-color: var(--cor-fundo-alt);
-}
- 
-.localizacao-box {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-}
- 
-.mapa {
-    flex: 2;
-}
- 
-.mapa p {
-    margin-bottom: 1rem;
-}
- 
-.mapa iframe {
-    width: 100%;
-    height: 380px;
-    border: none;
-    border-radius: var(--raio-lg);
-    box-shadow: var(--sombra);
-}
- 
 .horarios {
     background-color: var(--cor-branco);
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio-lg);
-    padding: 2rem;
+    padding: 1.75rem;
     box-shadow: var(--sombra);
 }
  
 .horarios h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
  
 .horarios h3 {
     color: var(--cor-primaria);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     margin-bottom: 0.2rem;
-    margin-top: 1.25rem;
+    margin-top: 1.2rem;
 }
  
 .horarios h3:first-of-type {
@@ -398,112 +505,89 @@ section:nth-child(even) {
 }
  
 .horarios p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 500;
     color: var(--cor-texto);
-}
- 
-/* =============================================
-   CONTATO + REDES SOCIAIS
-   ============================================= */
-.contato-box {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    gap: 4rem;
-}
- 
-.contato-box > div {
-    flex: 1;
-}
- 
-.contato-box h2 {
-    margin-bottom: 1.5rem;
-}
- 
-.contato-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: var(--raio);
-    border: 1px solid var(--cor-borda);
-    background-color: var(--cor-branco);
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
- 
-.contato-item:hover {
-    border-color: var(--cor-primaria);
-    box-shadow: 0 2px 10px rgba(139, 111, 71, 0.12);
-}
- 
-.contato-item img {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
- 
-.contato-item p {
-    margin: 0;
-    color: var(--cor-texto);
-    font-size: 0.95rem;
-}
- 
-.rede-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: var(--raio);
-    border: 1px solid var(--cor-borda);
-    background-color: var(--cor-branco);
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
- 
-.rede-item:hover {
-    border-color: var(--cor-primaria);
-    box-shadow: 0 2px 10px rgba(139, 111, 71, 0.12);
-}
- 
-.rede-item img {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-}
- 
-.rede-item p {
-    margin: 0;
-    color: var(--cor-texto);
-    font-size: 0.95rem;
 }
 
 .contatos {
     background-color: var(--cor-branco);
     border: 1px solid var(--cor-borda);
     border-radius: var(--raio-lg);
-    padding: 2rem;
+    padding: 1.75rem;
     box-shadow: var(--sombra);
+    flex: 1;
 }
 
 .contatos h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.redes-sociais {
+.contato-item {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 18px;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+ 
+.contato-item:hover {
+    background-color: transparent;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 2px 10px rgba(139, 111, 71, 0.12);
+    transform: scale(1.02);
+}
+ 
+.contato-item img {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+ 
+.contato-item p {
+    margin: 0;
+    color: var(--cor-texto);
+    font-size: 0.9rem;
+    transition: transform 0.2s;
 }
 
-.redes-sociais .rede-item {
-    flex: 1;
-    justify-content: center;
+.contato-item p:active {
+    color: var(--cor-primaria);
+}
+
+button.contato-item {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    cursor: pointer;
+    padding: 0.7rem 1rem;
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-sizing: border-box;
+}
+
+button.contato-item:hover {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 2px 10px rgba(139, 111, 71, 0.12);
+    transform: scale(1.02);
+}
+
+.contato-item:last-of-type {
+    margin-top: 18px;
 }
  
 /* =============================================
-   FOOTER
+   FOOTER:
    ============================================= */
+
 footer {
     background-color: var(--cor-fundo-escuro);
     color: rgba(253, 250, 245, 0.6);
@@ -511,6 +595,7 @@ footer {
     padding: 2.5rem 2rem;
     font-size: 0.875rem;
     line-height: 1.8;
+    border-top: 1px solid #D4AF37;
 }
  
 footer p {
@@ -519,8 +604,9 @@ footer p {
 }
  
 /* =============================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE:
    ============================================= */
+
 @media (max-width: 768px) {
     nav {
         padding: 0.8rem 1.25rem;
@@ -532,6 +618,10 @@ footer p {
         font-size: 0.78rem;
         white-space: nowrap;
     }
+
+    h1 {
+        margin-top: 30px;
+    }
  
     section {
         padding: 3.5rem 1.25rem;
@@ -540,27 +630,53 @@ footer p {
     .servicos-grade {
         grid-template-columns: 1fr;
     }
- 
-    .localizacao-box {
-        flex-direction: column;
-        gap: 2rem;
+
+    #localizacao {
+        padding: 3.5rem 1.25rem;
     }
  
-    .mapa iframe {
-        height: 280px;
+    .localizacao-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto; 
     }
 
-    .localizacao-topo {
-        flex-direction: column;
+    .coluna-esquerda, .coluna-direita {
+        display: contents;
+    }
+
+    .mapa {
+        order: 1;
+    }
+
+    .horarios {
+        order: 2;
+    }
+
+    .contatos {
+        order: 3;
     }
 
     .redes-sociais {
-        flex-direction: column;
+        order: 4;
+    }
+ 
+    .mapa iframe {
+        height: 260px;
     }
 
+    .redes-grid {
+        flex-direction: row;
+    }
  
     .contato-box {
         flex-direction: column;
         gap: 2.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .redes-grid {
+        grid-template-columns: 1fr;
     }
 }

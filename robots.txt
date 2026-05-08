@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://danielfprocha.github.io/site-costureira/sitemap.xml
